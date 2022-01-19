@@ -1,0 +1,30 @@
+version: 1
+formatters:
+  simpleFormatter:
+    format: '[%(asctime)s]  %(name)s  [%(levelname)s]: %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simpleFormatter
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.handlers.RotatingFileHandler
+    formatter: simpleFormatter
+    filename: ./logconfig.log
+    maxBytes: 1024
+    encoding: utf-8
+    backupCount: 3
+loggers:
+  simpleExample:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  filelogger:
+    level: DEBUG
+    handlers: [file]
+    propagate: no
+root:
+  level: WARNING
+  handlers: [console]

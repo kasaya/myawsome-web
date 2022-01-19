@@ -1,0 +1,2 @@
+sql:
+  url: "mysql://dev:Cango666@10.42.1.45:3306/test-db"
