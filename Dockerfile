@@ -1,6 +1,6 @@
 FROM python:3.9
 
-ARG CURRNT_ENV = prod
+ARG CURRNT_ENV=prod
 
 ENV POETRY_VERSION=1.1.12
 
