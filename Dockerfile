@@ -4,7 +4,7 @@ ARG CURRNT_ENV=prod
 
 ENV POETRY_VERSION=1.1.12
 
-RUN curl -sSL https://gitee.com/mirrors/poetry/blob/master/get-poetry.py | python
+RUN curl -sSL https://install.python-poetry.org | python3 -
  
 WORKDIR /dist
 COPY poetry.log pyproject.toml /dist/
