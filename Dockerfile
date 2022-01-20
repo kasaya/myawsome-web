@@ -1,11 +1,7 @@
-FROM python:3.9
+FROM myweb:0.2
 
 ARG CURRNT_ENV=prod
 
-ENV POETRY_VERSION=1.1.12
-
-RUN curl -sSL https://install.python-poetry.org | POETRY_VERSION=${POETRY_VERSION} python3 -
- 
 WORKDIR /dist
 COPY poetry.log pyproject.toml /dist/
 
