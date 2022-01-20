@@ -5,5 +5,5 @@ services:
     ports:
      - "80:80"
   mysql:
-    imgae: "mysql:5.7"
+    image: "mysql:5.7"
     container_name: "mysql-test"
