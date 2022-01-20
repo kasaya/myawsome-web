@@ -12,5 +12,5 @@ services:
       - "MYSQL_USER=dev"
       - "MYSQL_PASS=Cango666"
     ports:
-      - "3306:3306"
+      - "3307:3306"
       
