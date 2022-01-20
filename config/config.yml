@@ -1,2 +1,2 @@
 sql:
-  url: "mysql://dev:Cango666@10.42.1.45:3306/test-db"
+  url: "mysql://dev:Cango666@mysql:3306/test-db"
