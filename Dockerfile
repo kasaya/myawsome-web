@@ -3,7 +3,7 @@ FROM myweb:0.2
 ARG CURRNT_ENV=prod
 
 WORKDIR /dist
-COPY poetry.log pyproject.toml /dist/
+COPY poetry.lock pyproject.toml /dist/
 
 RUN poetry config settings.virtualenvs.creat false \
     && poetry install $(test "$CURRNT_ENV" == prod && echo '--no-dev') --no-interaction --no-ansi
