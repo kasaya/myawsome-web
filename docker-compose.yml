@@ -6,4 +6,4 @@ services:
      - "80:80"
   mysql:
     image: "mysql:5.7"
-    container_name: "mysql-test"
+    container_name: "mysql-for-python"
