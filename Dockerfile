@@ -6,7 +6,7 @@ WORKDIR /dist
 COPY poetry.lock pyproject.toml /dist/
 
 RUN export PATH="/root/.local/bin:$PATH" \
-    && poetry config settings.virtualenvs.creat false \
+    && poetry config virtualenvs.create false \
     && poetry install $(test "$CURRNT_ENV" == prod && echo '--no-dev') --no-interaction --no-ansi
 
 COPY . /dist
