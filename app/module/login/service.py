@@ -21,6 +21,8 @@ from app.utils.log_util import *
 def login(item: login_schemas.LoginCreate, db:Session):
    logger.debug("进入登录方法")
    filelogger.debug("file进入登录方法")
+   
+  # try:
    loginCdinfo:Optional[Login] = db.query(Login).filter(Login.login_cd == item.loginCd).first()
    logger.info("执行方法")
    filelogger.debug("file执行方法")
@@ -28,6 +30,9 @@ def login(item: login_schemas.LoginCreate, db:Session):
       pwd:Optional[Login]= db.query(Login).filter(Login.hashed_password == md5Password(item.password)).first()
       if pwd:
             return {'result': 'welcome ! %s' % item.loginCd}
+   # except BaseException as e:
+   #    logger.error(e)
+    
    return {'result': 'sorry !'}
 
 def registerUser(user:login_schemas.LoginCreate, db:Session):
