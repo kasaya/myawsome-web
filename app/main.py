@@ -24,11 +24,6 @@ def create_app():
 
 app = create_app()
 
-
-if __name__ == '__main__':
-    uvicorn.run(app='app.main:app', host='127.0.0.1', port=8000, reload=True)
-
-
 @app.exception_handler(AppcationExcetpion)
 async def application_excetpion_handler(request:Request, exc: AppcationExcetpion):
     return JSONResponse(
@@ -61,3 +56,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+if __name__ == '__main__':
+    uvicorn.run(app='app.main:app', host='127.0.0.1', port=8000, reload=True)
+
