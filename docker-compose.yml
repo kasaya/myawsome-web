@@ -10,7 +10,7 @@ services:
     environment:
       - "MYSQL_ROOT_PASSWORD=123456"
       - "MYSQL_USER=dev"
-      - "MYSQL_PASS=Cango666"
+      - "MYSQL_PASSWORD=Cango666"
     ports:
       - "3307:3306"
       
