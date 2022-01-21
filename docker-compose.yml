@@ -11,6 +11,10 @@ services:
       - "MYSQL_ROOT_PASSWORD=123456"
       - "MYSQL_USER=dev"
       - "MYSQL_PASSWORD=Cango666"
+    volumes:
+      - "./mysql/db:/var/lib/mysql"
+      - "./mysql/config/my.cnf:/etc/my.cnf"
+      - "./mysql/init:/docker-entrypoint-initdb.d/"
     ports:
       - "3307:3306"
       
